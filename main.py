@@ -68,8 +68,8 @@ class RainRandomGraph:
             self.clients = []
             self.edges = []
             if self.time != -1 and self.time > 0:
-                self.clients = [np.random.binomial(1, self.p, 2 * self.bound + 1) for _ in range(time)]
-                self.edges = [np.full(2 * self.bound + 1, None) for _ in range(time)]
+                self.clients = [np.random.binomial(1, self.p, 2 * self.bound + 1) for _ in range(self.time)]
+                self.edges = [np.full(2 * self.bound + 1, None) for _ in range(self.time)]
                 for i in range(1, self.time + 1):
                     for j in range(2 * bound + 1):
                         self.generate_node_edges([j, i])
@@ -84,8 +84,6 @@ class RainRandomGraph:
         self.edges.append([np.full(2 * self.bound, None) for _ in range(self.time)])
 
     def generate_node_edges(self, grid_index):
-        server = grid_index[0]
-        time = grid_index[1] - 1
         node_edges = []
         if not self.lazy:
             server = grid_index[0]
@@ -174,8 +172,7 @@ class RainRandomGraph:
                 return self.H[time][server]
             else:
                 if self.clients[time][server] == 1:
-                    if not (server > 0 and self.edges[time][server - 1][2] == 0) and not self.edges[time][server][
-                                                                                             2] == 1:
+                    if not (server > 0 and self.edges[time][server - 1][2] == 0) and not self.edges[time][server][2] == 1:
                         self.H[time][server] = 1
                         return self.H[time][server]
                     else:
@@ -238,14 +235,12 @@ class RainRandomGraph:
             server = max_path_coord[0] + self.bound
             time = max_path_coord[1] - 1
             while time >= 0:
-                if server > 0 and self.edges[time][server - 1][2] == 0 and self.H[time][server - 1] == self.H[time][
-                    server] - 1:
+                if server > 0 and self.edges[time][server - 1][2] == 0 and self.H[time][server - 1] == self.H[time][server] - 1:
                     ax.arrow(server - self.bound, time + 1, -(1 - EPS), 0, width=arrow_width,
                              head_width=arrow_head_width, head_length=arrow_head_length / 4, overhang=4, ec='red')
                     server = server - 1
                     continue
-                if server > 0 and time > 0 and self.edges[time][server][0] is not None and self.H[time - 1][
-                    server - 1] == self.H[time][server] - 1:
+                if server > 0 and time > 0 and self.edges[time][server][0] is not None and self.H[time - 1][server - 1] == self.H[time][server] - 1:
                     ax.arrow(server - self.bound, time + 1, -(1 - EPS), -(1 - EPS), width=arrow_width,
                              head_width=arrow_head_width, head_length=arrow_head_length / 4, overhang=4, ec='red')
                     server = server - 1
@@ -469,6 +464,6 @@ class RainRandomGraph:
                 continue
 
 
-rrg_t = RainRandomGraph(p=0.5, time=10, lazy=True)
-max_path = rrg_t.lazy_max_path(log=True)
+rrg = RainRandomGraph(p=0.5, time=10, lazy=True)
+max_path = rrg.lazy_max_path(log=True)
 max_path.get_max_path()
