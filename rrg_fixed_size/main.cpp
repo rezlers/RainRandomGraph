@@ -23,6 +23,8 @@ int main() {
 	
 //	std::cout << "FOR COMPILE REASONS, NOT NEEDED FOR THIS PROGRAMM";
 	
+	string folder_to_store_data = "/drive/MyDrive/RainRandomGraph/moduled_data";
+
 	bool log = true;
 	bool write_data = false;
 	int iter_num = 1;
@@ -33,42 +35,42 @@ int main() {
 	
 	auto t2 = std::chrono::steady_clock::now();
 	
-	// RRGHEAP
-	if (log) {
-		t1 = std::chrono::steady_clock::now();
-	}
+	// // RRGHEAP
+	// if (log) {
+	// 	t1 = std::chrono::steady_clock::now();
+	// }
 	
-	if (write_data) {
-		myfile.open("/drive/MyDrive/RainRandomGraph/moduled_data/rrg_data_095_1000.txt");
-	}
+	// if (write_data) {
+	// 	myfile.open(folder_to_store_data + "/rrg_data_095_1000.txt");
+	// }
 	
-	for (int i=0;i<iter_num;i++) {
-		if (log) {
-			std::cout << "Iteration: " << i + 1 << '\n';
-		}
+	// for (int i=0;i<iter_num;i++) {
+	// 	if (log) {
+	// 		std::cout << "Iteration: " << i + 1 << '\n';
+	// 	}
 		
-		RainRandomGraphHeap rrg_inst = RainRandomGraphHeap();
+	// 	RainRandomGraphHeap rrg_inst = RainRandomGraphHeap();
 		
-		int max_path = rrg_inst.getMaxPath();
+	// 	int max_path = rrg_inst.getMaxPath();
 		
-		if (log) {
-			std::cout << max_path << '\n';
-		}
+	// 	if (log) {
+	// 		std::cout << max_path << '\n';
+	// 	}
 		
-		if (write_data) {
-			myfile << max_path << ',';
-		}
-	}
+	// 	if (write_data) {
+	// 		myfile << max_path << ',';
+	// 	}
+	// }
 	
-	if (log) {
-		t2 = std::chrono::steady_clock::now();
-		elapsed_seconds = t2-t1;
-		std::cout << "Performance on heap result: " << elapsed_seconds.count() << '\n';
-	}
+	// if (log) {
+	// 	t2 = std::chrono::steady_clock::now();
+	// 	elapsed_seconds = t2-t1;
+	// 	std::cout << "Performance on heap result: " << elapsed_seconds.count() << '\n';
+	// }
 	
-	if (write_data) {
-		myfile.close();
-	}
+	// if (write_data) {
+	// 	myfile.close();
+	// }
 	
 	
 	// RRG095
@@ -77,7 +79,7 @@ int main() {
 	}
 	
 	if (write_data) {
-		myfile.open("/drive/MyDrive/RainRandomGraph/moduled_data/rrg_data_095_1000.txt");
+		myfile.open(folder_to_store_data + "/rrg_data_095_1000.txt");
 	}
 	
 	for (int i=0;i<iter_num;i++) {
@@ -115,7 +117,7 @@ int main() {
 	}
 	
 	if (write_data) {
-		myfile.open("/drive/MyDrive/RainRandomGraph/moduled_data/rrg_data_09_1000.txt");
+		myfile.open(folder_to_store_data + "/rrg_data_09_1000.txt");
 	}
 	
 	for (int i=0;i<iter_num;i++) {
@@ -146,7 +148,7 @@ int main() {
 	}
 	
 	if (write_data) {
-		myfile.open("/drive/MyDrive/RainRandomGraph/moduled_data/rrg_data_08_1000.txt");
+		myfile.open(folder_to_store_data + "/rrg_data_08_1000.txt");
 	}
 	
 	for (int i=0;i<iter_num;i++) {
@@ -177,7 +179,7 @@ int main() {
 	}
 	
 	if (write_data) {
-		myfile.open("/drive/MyDrive/RainRandomGraph/moduled_data/rrg_data_07_1000.txt");
+		myfile.open(folder_to_store_data + "/rrg_data_07_1000.txt");
 	}
 	
 	for (int i=0;i<iter_num;i++) {
@@ -208,7 +210,7 @@ int main() {
 	}
 	
 	if (write_data) {
-		myfile.open("/drive/MyDrive/RainRandomGraph/moduled_data/rrg_data_06_1000.txt");
+		myfile.open(folder_to_store_data + "/rrg_data_06_1000.txt");
 	}
 	
 	for (int i=0;i<iter_num;i++) {
@@ -239,7 +241,7 @@ int main() {
 	}
 	
 	if (write_data) {
-		myfile.open("/drive/MyDrive/RainRandomGraph/moduled_data/rrg_data_05_1000.txt");
+		myfile.open(folder_to_store_data + "/rrg_data_05_1000.txt");
 	}
 	
 	for (int i=0;i<iter_num;i++) {
@@ -270,7 +272,7 @@ int main() {
 	}
 	
 	if (write_data) {
-		myfile.open("/drive/MyDrive/RainRandomGraph/moduled_data/rrg_data_04_1000.txt");
+		myfile.open(folder_to_store_data + "/rrg_data_04_1000.txt");
 	}
 	
 	for (int i=0;i<iter_num;i++) {
@@ -301,7 +303,7 @@ int main() {
 	}
 	
 	if (write_data) {
-		myfile.open("/drive/MyDrive/RainRandomGraph/moduled_data/rrg_data_03_1000.txt");
+		myfile.open(folder_to_store_data + "/rrg_data_03_1000.txt");
 	}
 	
 	for (int i=0;i<iter_num;i++) {
@@ -332,7 +334,7 @@ int main() {
 	}
 	
 	if (write_data) {
-		myfile.open("/drive/MyDrive/RainRandomGraph/moduled_data/rrg_data_02_1000.txt");
+		myfile.open(folder_to_store_data + "/rrg_data_02_1000.txt");
 	}
 	
 	for (int i=0;i<iter_num;i++) {
@@ -363,7 +365,7 @@ int main() {
 	}
 	
 	if (write_data) {
-		myfile.open("/drive/MyDrive/RainRandomGraph/moduled_data/rrg_data_01_1000.txt");
+		myfile.open(folder_to_store_data + "/rrg_data_01_1000.txt");
 	}
 	
 	for (int i=0;i<iter_num;i++) {
@@ -394,7 +396,7 @@ int main() {
 	}
 	
 	if (write_data) {
-		myfile.open("/drive/MyDrive/RainRandomGraph/moduled_data/rrg_data_005_1000.txt");
+		myfile.open(folder_to_store_data + "/rrg_data_005_1000.txt");
 	}
 	
 	for (int i=0;i<iter_num;i++) {

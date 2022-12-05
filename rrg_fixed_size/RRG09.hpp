@@ -3,8 +3,8 @@
 
 class RRG09 {
 private:
-	static const int graphTime = 1000;
-	static const int bound = 1000;
+	static const int graphTime = 100;
+	static const int bound = 100;
 	static const double p = 0.9;
 	int H[graphTime][2*bound+1];
 	char edges[graphTime][2*bound+1];
