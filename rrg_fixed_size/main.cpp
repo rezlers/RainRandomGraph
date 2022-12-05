@@ -4,6 +4,7 @@ using namespace std;
 #include <random>
 #include <chrono>
 #include <sys/resource.h>
+#include <fstream>
 #include <RainRandomGraphHeap.hpp>
 #include <RainRandomGraphOpt.hpp>
 #include <RRG005.hpp>
@@ -17,7 +18,6 @@ using namespace std;
 #include <RRG08.hpp>
 #include <RRG09.hpp>
 #include <RRG095.hpp>
-#include <fstream>
 
 int main() {
 	
