@@ -15,7 +15,7 @@ class RainRandomGraphOpt {
 private:
 	static const int graphTime = 5000;
 	static const int bound = 1000;
-	static constexpr float p = 0.5;
+	static constexpr double p = 0.5;
 	int H[graphTime][2*bound+1];
 	char edges[graphTime][2*bound+1];
 	bool clients[graphTime][2*bound+1];
