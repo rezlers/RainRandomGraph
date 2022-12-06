@@ -92,8 +92,8 @@ public:
 //	int iter_num = 0;
 
 	RainRandomGraphOpt() {
-		std::cout << "Start initialization:\n";
-		auto t1 = std::chrono::steady_clock::now();
+		// std::cout << "Start initialization:\n";
+		// auto t1 = std::chrono::steady_clock::now();
 		
 		std::random_device rd;
 		std::mt19937 gen(rd());
@@ -118,22 +118,22 @@ public:
 			}
 		}
 		
-		auto t2 = std::chrono::steady_clock::now();
-		std::chrono::duration<double> elapsed_seconds = t2-t1;
-		std::cout << "Initialization performance result: " << elapsed_seconds.count() << '\n';
+		// auto t2 = std::chrono::steady_clock::now();
+		// std::chrono::duration<double> elapsed_seconds = t2-t1;
+		// std::cout << "Initialization performance result: " << elapsed_seconds.count() << '\n';
 	}
 	
 	~RainRandomGraphOpt() {}
 
 	int getMaxPath() {
-		std::cout << "Start calculating:\n";
-		auto t1 = std::chrono::steady_clock::now();
+		// std::cout << "Start calculating:\n";
+		// auto t1 = std::chrono::steady_clock::now();
 		
 		int maxPath = calculateMaxPath(bound, graphTime-1);
 		
-		auto t2 = std::chrono::steady_clock::now();
-		std::chrono::duration<double> elapsed_seconds = t2-t1;
-		std::cout << "Calculation performance result: " << elapsed_seconds.count() << '\n';
+		// auto t2 = std::chrono::steady_clock::now();
+		// std::chrono::duration<double> elapsed_seconds = t2-t1;
+		// std::cout << "Calculation performance result: " << elapsed_seconds.count() << '\n';
 		
 		return maxPath;
 	}
