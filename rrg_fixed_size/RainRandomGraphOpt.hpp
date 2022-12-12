@@ -19,7 +19,6 @@ private:
 	int H[graphTime][2*bound+1];
 	char edges[graphTime][2*bound+1];
 	bool clients[graphTime][2*bound+1];
-	bool hit_border = false;
 	
 	int calculateMaxPath(int server_, int time_) {
 		int server = server_;
@@ -94,6 +93,7 @@ private:
 		}
 	}
 public:
+	bool hit_border = false;
 //	int iter_num = 0;
 
 	RainRandomGraphOpt() {
