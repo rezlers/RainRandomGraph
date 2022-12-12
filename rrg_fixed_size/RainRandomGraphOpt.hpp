@@ -103,6 +103,8 @@ public:
 		std::random_device rd;
 		std::mt19937 gen(rd());
 		std::bernoulli_distribution d(p);
+		std::bernoulli_distribution d_(0.5);
+
 		for (int time_ = 0; time_ < graphTime; time_++) {
 			for(int server_ = 0; server_ < 2*bound+1; server_++) {
 				H[time_][server_] = -1;
@@ -112,7 +114,7 @@ public:
 		for (int time_ = 0; time_ < graphTime; time_++) {
 			for(int server_ = 0; server_ < 2*bound+1; server_++) {
 				if ( (server_ < 2*bound) && (clients[time_][server_]) && (clients[time_][server_+1]) ) {
-					if (d(gen)) {
+					if (d_(gen)) {
 						edges[time_][server_] = '1';
 					} else {
 						edges[time_][server_] = '0';
