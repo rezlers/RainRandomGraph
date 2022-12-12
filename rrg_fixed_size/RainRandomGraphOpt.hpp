@@ -19,6 +19,7 @@ private:
 	int H[graphTime][2*bound+1];
 	char edges[graphTime][2*bound+1];
 	bool clients[graphTime][2*bound+1];
+	bool hit_border = false;
 	
 	int calculateMaxPath(int server_, int time_) {
 		int server = server_;
@@ -30,6 +31,10 @@ private:
 		int maxEdgePathRU = 0;
 		
 //		iter_num++;
+
+		if ( (server == 0) || (server == 2*bound) ) {
+			hit_border = true;
+		}
 		
 		if (H[time][server] != -1) {
 			return H[time][server];
